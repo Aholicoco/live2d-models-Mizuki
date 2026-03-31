@@ -1,5 +1,5 @@
 {
-  "defaultModel": "pio",
+  "defaultModel": "tia",
   "models": [
     "pio",
     "tia"
