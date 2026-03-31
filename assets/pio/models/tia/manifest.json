@@ -1,0 +1,14 @@
+{
+  "id": "tia",
+  "name": "Tia",
+  "base": "/pio/models/tia/index.json",
+  "outfits": [
+    {
+      "id": "001-textures-default-costume",
+      "name": "default-costume",
+      "textures": [
+        "textures/default-costume.png"
+      ]
+    }
+  ]
+}

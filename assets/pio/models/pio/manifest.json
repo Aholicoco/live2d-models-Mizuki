@@ -1,0 +1,840 @@
+{
+  "id": "pio",
+  "name": "Pio",
+  "base": "/pio/models/pio/index.json",
+  "outfits": [
+    {
+      "id": "001-textures-akiba-idol-costume",
+      "name": "Akiba Idol Costume",
+      "textures": [
+        "textures/Akiba Idol Costume.png"
+      ]
+    },
+    {
+      "id": "002-textures-animal-costume-racoon",
+      "name": "Animal Costume Racoon",
+      "textures": [
+        "textures/Animal Costume Racoon.png"
+      ]
+    },
+    {
+      "id": "003-textures-animal-costume",
+      "name": "Animal Costume",
+      "textures": [
+        "textures/Animal Costume.png"
+      ]
+    },
+    {
+      "id": "004-textures-bunny-girl-costume-red",
+      "name": "Bunny Girl Costume Red",
+      "textures": [
+        "textures/Bunny Girl Costume Red.png"
+      ]
+    },
+    {
+      "id": "005-textures-bunny-girl-costume",
+      "name": "Bunny Girl Costume",
+      "textures": [
+        "textures/Bunny Girl Costume.png"
+      ]
+    },
+    {
+      "id": "006-textures-cake-costume-choco",
+      "name": "Cake Costume Choco",
+      "textures": [
+        "textures/Cake Costume Choco.png"
+      ]
+    },
+    {
+      "id": "007-textures-cake-costume-cream",
+      "name": "Cake Costume Cream",
+      "textures": [
+        "textures/Cake Costume Cream.png"
+      ]
+    },
+    {
+      "id": "008-textures-dress-costume-brown",
+      "name": "Dress Costume Brown",
+      "textures": [
+        "textures/Dress Costume Brown.png"
+      ]
+    },
+    {
+      "id": "009-textures-dress-costume",
+      "name": "Dress Costume",
+      "textures": [
+        "textures/Dress Costume.png"
+      ]
+    },
+    {
+      "id": "010-textures-elementary-school-costume-navy",
+      "name": "Elementary School Costume Navy",
+      "textures": [
+        "textures/Elementary School Costume Navy.png"
+      ]
+    },
+    {
+      "id": "011-textures-elementary-school-costume",
+      "name": "Elementary School Costume",
+      "textures": [
+        "textures/Elementary School Costume.png"
+      ]
+    },
+    {
+      "id": "012-textures-fall-dress-costume-beige",
+      "name": "Fall Dress Costume Beige",
+      "textures": [
+        "textures/Fall Dress Costume Beige.png"
+      ]
+    },
+    {
+      "id": "013-textures-fall-dress-costume-brown",
+      "name": "Fall Dress Costume Brown",
+      "textures": [
+        "textures/Fall Dress Costume Brown.png"
+      ]
+    },
+    {
+      "id": "014-textures-forest-witch-costume-brown",
+      "name": "Forest Witch Costume Brown",
+      "textures": [
+        "textures/Forest Witch Costume Brown.png"
+      ]
+    },
+    {
+      "id": "015-textures-forest-witch-costume-green",
+      "name": "Forest Witch Costume Green",
+      "textures": [
+        "textures/Forest Witch Costume Green.png"
+      ]
+    },
+    {
+      "id": "016-textures-frill-bikini-costume-green",
+      "name": "Frill Bikini Costume Green",
+      "textures": [
+        "textures/Frill Bikini Costume Green.png"
+      ]
+    },
+    {
+      "id": "017-textures-frill-bikini-costume-purple",
+      "name": "Frill Bikini Costume Purple",
+      "textures": [
+        "textures/Frill Bikini Costume Purple.png"
+      ]
+    },
+    {
+      "id": "018-textures-frill-blouse-costume-green",
+      "name": "Frill Blouse Costume Green",
+      "textures": [
+        "textures/Frill Blouse Costume Green.png"
+      ]
+    },
+    {
+      "id": "019-textures-frill-blouse-costume-red",
+      "name": "Frill Blouse Costume Red",
+      "textures": [
+        "textures/Frill Blouse Costume Red.png"
+      ]
+    },
+    {
+      "id": "020-textures-furisode-costume",
+      "name": "Furisode Costume",
+      "textures": [
+        "textures/Furisode Costume.png"
+      ]
+    },
+    {
+      "id": "021-textures-goddess-costume-pink",
+      "name": "Goddess Costume Pink",
+      "textures": [
+        "textures/Goddess Costume Pink.png"
+      ]
+    },
+    {
+      "id": "022-textures-goddess-costume-white",
+      "name": "Goddess Costume White",
+      "textures": [
+        "textures/Goddess Costume White.png"
+      ]
+    },
+    {
+      "id": "023-textures-halloween-costume",
+      "name": "Halloween Costume",
+      "textures": [
+        "textures/Halloween Costume.png"
+      ]
+    },
+    {
+      "id": "024-textures-hanbok-costume-pink",
+      "name": "Hanbok Costume Pink",
+      "textures": [
+        "textures/Hanbok Costume Pink.png"
+      ]
+    },
+    {
+      "id": "025-textures-hanbok-costume-red",
+      "name": "Hanbok Costume Red",
+      "textures": [
+        "textures/Hanbok Costume Red.png"
+      ]
+    },
+    {
+      "id": "026-textures-hanbok-costume-skyblue",
+      "name": "Hanbok Costume Skyblue",
+      "textures": [
+        "textures/Hanbok Costume Skyblue.png"
+      ]
+    },
+    {
+      "id": "027-textures-hanbok-costume-yellow",
+      "name": "Hanbok Costume Yellow",
+      "textures": [
+        "textures/Hanbok Costume Yellow.png"
+      ]
+    },
+    {
+      "id": "028-textures-hanbok-costume",
+      "name": "Hanbok Costume",
+      "textures": [
+        "textures/Hanbok Costume.png"
+      ]
+    },
+    {
+      "id": "029-textures-healer-costume",
+      "name": "Healer Costume",
+      "textures": [
+        "textures/Healer Costume.png"
+      ]
+    },
+    {
+      "id": "030-textures-kids-costume-navy",
+      "name": "Kids Costume Navy",
+      "textures": [
+        "textures/Kids Costume Navy.png"
+      ]
+    },
+    {
+      "id": "031-textures-kids-costume",
+      "name": "Kids Costume",
+      "textures": [
+        "textures/Kids Costume.png"
+      ]
+    },
+    {
+      "id": "032-textures-literature-girl-costume-brown",
+      "name": "Literature Girl Costume Brown",
+      "textures": [
+        "textures/Literature Girl Costume Brown.png"
+      ]
+    },
+    {
+      "id": "033-textures-literature-girl-costume-navy",
+      "name": "Literature Girl Costume Navy",
+      "textures": [
+        "textures/Literature Girl Costume Navy.png"
+      ]
+    },
+    {
+      "id": "034-textures-lolita-costume-red",
+      "name": "Lolita Costume Red",
+      "textures": [
+        "textures/Lolita Costume Red.png"
+      ]
+    },
+    {
+      "id": "035-textures-lolita-costume-skyblue",
+      "name": "Lolita Costume Skyblue",
+      "textures": [
+        "textures/Lolita Costume Skyblue.png"
+      ]
+    },
+    {
+      "id": "036-textures-magical-girl-costume-pink",
+      "name": "Magical Girl Costume Pink",
+      "textures": [
+        "textures/Magical Girl Costume Pink.png"
+      ]
+    },
+    {
+      "id": "037-textures-magical-girl-costume-purple",
+      "name": "Magical Girl Costume Purple",
+      "textures": [
+        "textures/Magical Girl Costume Purple.png"
+      ]
+    },
+    {
+      "id": "038-textures-maid-costume-red",
+      "name": "Maid Costume Red",
+      "textures": [
+        "textures/Maid Costume Red.png"
+      ]
+    },
+    {
+      "id": "039-textures-maid-costume",
+      "name": "Maid Costume",
+      "textures": [
+        "textures/Maid Costume.png"
+      ]
+    },
+    {
+      "id": "040-textures-marine-costume-navy",
+      "name": "Marine Costume Navy",
+      "textures": [
+        "textures/Marine Costume Navy.png"
+      ]
+    },
+    {
+      "id": "041-textures-marine-costume-white",
+      "name": "Marine Costume White",
+      "textures": [
+        "textures/Marine Costume White.png"
+      ]
+    },
+    {
+      "id": "042-textures-new2015-costume-pajamas",
+      "name": "New2015 Costume Pajamas",
+      "textures": [
+        "textures/New2015 Costume Pajamas.png"
+      ]
+    },
+    {
+      "id": "043-textures-new2015-costume",
+      "name": "New2015 Costume",
+      "textures": [
+        "textures/New2015 Costume.png"
+      ]
+    },
+    {
+      "id": "044-textures-night-witch-costume-black",
+      "name": "Night Witch Costume Black",
+      "textures": [
+        "textures/Night Witch Costume Black.png"
+      ]
+    },
+    {
+      "id": "045-textures-night-witch-costume-gray",
+      "name": "Night Witch Costume Gray",
+      "textures": [
+        "textures/Night Witch Costume Gray.png"
+      ]
+    },
+    {
+      "id": "046-textures-nightsky-costume",
+      "name": "Nightsky Costume",
+      "textures": [
+        "textures/Nightsky Costume.png"
+      ]
+    },
+    {
+      "id": "047-textures-overalls-costume-white",
+      "name": "Overalls Costume White",
+      "textures": [
+        "textures/Overalls Costume White.png"
+      ]
+    },
+    {
+      "id": "048-textures-overalls-costume",
+      "name": "Overalls Costume",
+      "textures": [
+        "textures/Overalls Costume.png"
+      ]
+    },
+    {
+      "id": "049-textures-pajamas-costume-pink",
+      "name": "Pajamas Costume Pink",
+      "textures": [
+        "textures/Pajamas Costume Pink.png"
+      ]
+    },
+    {
+      "id": "050-textures-party-dress-costume-brown",
+      "name": "Party Dress Costume Brown",
+      "textures": [
+        "textures/Party Dress Costume Brown.png"
+      ]
+    },
+    {
+      "id": "051-textures-party-dress-costume-purple",
+      "name": "Party Dress Costume Purple",
+      "textures": [
+        "textures/Party Dress Costume Purple.png"
+      ]
+    },
+    {
+      "id": "052-textures-priest-costume-junior",
+      "name": "Priest Costume Junior",
+      "textures": [
+        "textures/Priest Costume Junior.png"
+      ]
+    },
+    {
+      "id": "053-textures-priest-costume-senior",
+      "name": "Priest Costume Senior",
+      "textures": [
+        "textures/Priest Costume Senior.png"
+      ]
+    },
+    {
+      "id": "054-textures-qipao-costume-pink",
+      "name": "Qipao Costume Pink",
+      "textures": [
+        "textures/Qipao Costume Pink.png"
+      ]
+    },
+    {
+      "id": "055-textures-qipao-costume-red",
+      "name": "Qipao Costume Red",
+      "textures": [
+        "textures/Qipao Costume Red.png"
+      ]
+    },
+    {
+      "id": "056-textures-ribbon-dress-costume-red",
+      "name": "Ribbon Dress Costume Red",
+      "textures": [
+        "textures/Ribbon Dress Costume Red.png"
+      ]
+    },
+    {
+      "id": "057-textures-ribbon-dress-costume-yellow",
+      "name": "Ribbon Dress Costume Yellow",
+      "textures": [
+        "textures/Ribbon Dress Costume Yellow.png"
+      ]
+    },
+    {
+      "id": "058-textures-sfc-uniform-costume-red",
+      "name": "SFC Uniform Costume Red",
+      "textures": [
+        "textures/SFC Uniform Costume Red.png"
+      ]
+    },
+    {
+      "id": "059-textures-sfc-uniform-costume-yellow",
+      "name": "SFC Uniform Costume Yellow",
+      "textures": [
+        "textures/SFC Uniform Costume Yellow.png"
+      ]
+    },
+    {
+      "id": "060-textures-sailor-costume-black",
+      "name": "Sailor Costume Black",
+      "textures": [
+        "textures/Sailor Costume Black.png"
+      ]
+    },
+    {
+      "id": "061-textures-sailor-costume",
+      "name": "Sailor Costume",
+      "textures": [
+        "textures/Sailor Costume.png"
+      ]
+    },
+    {
+      "id": "062-textures-sakura-costume-navy",
+      "name": "Sakura Costume Navy",
+      "textures": [
+        "textures/Sakura Costume Navy.png"
+      ]
+    },
+    {
+      "id": "063-textures-sakura-costume",
+      "name": "Sakura Costume",
+      "textures": [
+        "textures/Sakura Costume.png"
+      ]
+    },
+    {
+      "id": "064-textures-sakura-fairy-costume-real",
+      "name": "Sakura Fairy Costume Real",
+      "textures": [
+        "textures/Sakura Fairy Costume Real.png"
+      ]
+    },
+    {
+      "id": "065-textures-sakura-fairy-costume",
+      "name": "Sakura Fairy Costume",
+      "textures": [
+        "textures/Sakura Fairy Costume.png"
+      ]
+    },
+    {
+      "id": "066-textures-santa-2018-costume-green",
+      "name": "Santa 2018 Costume Green",
+      "textures": [
+        "textures/Santa 2018 Costume Green.png"
+      ]
+    },
+    {
+      "id": "067-textures-santa-2018-costume-red",
+      "name": "Santa 2018 Costume Red",
+      "textures": [
+        "textures/Santa 2018 Costume Red.png"
+      ]
+    },
+    {
+      "id": "068-textures-santa-costume-green",
+      "name": "Santa Costume Green",
+      "textures": [
+        "textures/Santa Costume Green.png"
+      ]
+    },
+    {
+      "id": "069-textures-santa-costume",
+      "name": "Santa Costume",
+      "textures": [
+        "textures/Santa Costume.png"
+      ]
+    },
+    {
+      "id": "070-textures-sarori-costume",
+      "name": "Sarori Costume",
+      "textures": [
+        "textures/Sarori Costume.png"
+      ]
+    },
+    {
+      "id": "071-textures-school-2017-costume-gray",
+      "name": "School 2017 Costume Gray",
+      "textures": [
+        "textures/School 2017 Costume Gray.png"
+      ]
+    },
+    {
+      "id": "072-textures-school-2017-costume-yellow",
+      "name": "School 2017 Costume Yellow",
+      "textures": [
+        "textures/School 2017 Costume Yellow.png"
+      ]
+    },
+    {
+      "id": "073-textures-school-2019-costume-black",
+      "name": "School 2019 Costume Black",
+      "textures": [
+        "textures/School 2019 Costume Black.png"
+      ]
+    },
+    {
+      "id": "074-textures-school-2019-costume-pink",
+      "name": "School 2019 Costume Pink",
+      "textures": [
+        "textures/School 2019 Costume Pink.png"
+      ]
+    },
+    {
+      "id": "075-textures-school-costume-red",
+      "name": "School Costume Red",
+      "textures": [
+        "textures/School Costume Red.png"
+      ]
+    },
+    {
+      "id": "076-textures-shaman-costume-black",
+      "name": "Shaman Costume Black",
+      "textures": [
+        "textures/Shaman Costume Black.png"
+      ]
+    },
+    {
+      "id": "077-textures-shaman-costume-blue",
+      "name": "Shaman Costume Blue",
+      "textures": [
+        "textures/Shaman Costume Blue.png"
+      ]
+    },
+    {
+      "id": "078-textures-sinsiroad-costume",
+      "name": "Sinsiroad Costume",
+      "textures": [
+        "textures/Sinsiroad Costume.png"
+      ]
+    },
+    {
+      "id": "079-textures-sinsiroad-shop-costume-junior",
+      "name": "Sinsiroad Shop Costume Junior",
+      "textures": [
+        "textures/Sinsiroad Shop Costume Junior.png"
+      ]
+    },
+    {
+      "id": "080-textures-sinsiroad-shop-costume-senior",
+      "name": "Sinsiroad Shop Costume Senior",
+      "textures": [
+        "textures/Sinsiroad Shop Costume Senior.png"
+      ]
+    },
+    {
+      "id": "081-textures-sorceress-costume",
+      "name": "Sorceress Costume",
+      "textures": [
+        "textures/Sorceress Costume.png"
+      ]
+    },
+    {
+      "id": "082-textures-sporty-hood-costume-black",
+      "name": "Sporty Hood Costume Black",
+      "textures": [
+        "textures/Sporty Hood Costume Black.png"
+      ]
+    },
+    {
+      "id": "083-textures-sporty-hood-costume-blue",
+      "name": "Sporty Hood Costume Blue",
+      "textures": [
+        "textures/Sporty Hood Costume Blue.png"
+      ]
+    },
+    {
+      "id": "084-textures-star-witch-costume-brown",
+      "name": "Star Witch Costume Brown",
+      "textures": [
+        "textures/Star Witch Costume Brown.png"
+      ]
+    },
+    {
+      "id": "085-textures-star-witch-costume",
+      "name": "Star Witch Costume",
+      "textures": [
+        "textures/Star Witch Costume.png"
+      ]
+    },
+    {
+      "id": "086-textures-succubus-costume-black",
+      "name": "Succubus Costume Black",
+      "textures": [
+        "textures/Succubus Costume Black.png"
+      ]
+    },
+    {
+      "id": "087-textures-succubus-costume-red",
+      "name": "Succubus Costume Red",
+      "textures": [
+        "textures/Succubus Costume Red.png"
+      ]
+    },
+    {
+      "id": "088-textures-sukumizu-costume-white",
+      "name": "Sukumizu Costume White",
+      "textures": [
+        "textures/Sukumizu Costume White.png"
+      ]
+    },
+    {
+      "id": "089-textures-sukumizu-costume",
+      "name": "Sukumizu Costume",
+      "textures": [
+        "textures/Sukumizu Costume.png"
+      ]
+    },
+    {
+      "id": "090-textures-summer-dress-costume-blue",
+      "name": "Summer Dress Costume Blue",
+      "textures": [
+        "textures/Summer Dress Costume Blue.png"
+      ]
+    },
+    {
+      "id": "091-textures-summer-dress-costume-white",
+      "name": "Summer Dress Costume White",
+      "textures": [
+        "textures/Summer Dress Costume White.png"
+      ]
+    },
+    {
+      "id": "092-textures-summer-uniform-costume-blue",
+      "name": "Summer Uniform Costume Blue",
+      "textures": [
+        "textures/Summer Uniform Costume Blue.png"
+      ]
+    },
+    {
+      "id": "093-textures-summer-uniform-costume-red",
+      "name": "Summer Uniform Costume Red",
+      "textures": [
+        "textures/Summer Uniform Costume Red.png"
+      ]
+    },
+    {
+      "id": "094-textures-swimsuit-2017-costume-navy",
+      "name": "Swimsuit 2017 Costume Navy",
+      "textures": [
+        "textures/Swimsuit 2017 Costume Navy.png"
+      ]
+    },
+    {
+      "id": "095-textures-swimsuit-2017-costume-red",
+      "name": "Swimsuit 2017 Costume Red",
+      "textures": [
+        "textures/Swimsuit 2017 Costume Red.png"
+      ]
+    },
+    {
+      "id": "096-textures-tirami1-costume",
+      "name": "Tirami1 Costume",
+      "textures": [
+        "textures/Tirami1 Costume.png"
+      ]
+    },
+    {
+      "id": "097-textures-turtleneck-costume-red",
+      "name": "Turtleneck Costume Red",
+      "textures": [
+        "textures/Turtleneck Costume Red.png"
+      ]
+    },
+    {
+      "id": "098-textures-turtleneck-costume",
+      "name": "Turtleneck Costume",
+      "textures": [
+        "textures/Turtleneck Costume.png"
+      ]
+    },
+    {
+      "id": "099-textures-valentine-costume-brown",
+      "name": "Valentine Costume Brown",
+      "textures": [
+        "textures/Valentine Costume Brown.png"
+      ]
+    },
+    {
+      "id": "100-textures-valentine-costume-pink",
+      "name": "Valentine Costume Pink",
+      "textures": [
+        "textures/Valentine Costume Pink.png"
+      ]
+    },
+    {
+      "id": "101-textures-vampire-costume-real",
+      "name": "Vampire Costume Real",
+      "textures": [
+        "textures/Vampire Costume Real.png"
+      ]
+    },
+    {
+      "id": "102-textures-vampire-costume",
+      "name": "Vampire Costume",
+      "textures": [
+        "textures/Vampire Costume.png"
+      ]
+    },
+    {
+      "id": "103-textures-voice-story-costume",
+      "name": "Voice Story Costume",
+      "textures": [
+        "textures/Voice Story Costume.png"
+      ]
+    },
+    {
+      "id": "104-textures-whiteday-costume-purple",
+      "name": "Whiteday Costume Purple",
+      "textures": [
+        "textures/Whiteday Costume Purple.png"
+      ]
+    },
+    {
+      "id": "105-textures-whiteday-costume-red",
+      "name": "Whiteday Costume Red",
+      "textures": [
+        "textures/Whiteday Costume Red.png"
+      ]
+    },
+    {
+      "id": "106-textures-winter-coat-2017-costume-brown",
+      "name": "Winter Coat 2017 Costume Brown",
+      "textures": [
+        "textures/Winter Coat 2017 Costume Brown.png"
+      ]
+    },
+    {
+      "id": "107-textures-winter-coat-2017-costume-white",
+      "name": "Winter Coat 2017 Costume White",
+      "textures": [
+        "textures/Winter Coat 2017 Costume White.png"
+      ]
+    },
+    {
+      "id": "108-textures-winter-coat-costume-pink",
+      "name": "Winter Coat Costume Pink",
+      "textures": [
+        "textures/Winter Coat Costume Pink.png"
+      ]
+    },
+    {
+      "id": "109-textures-winter-coat-costume-white",
+      "name": "Winter Coat Costume White",
+      "textures": [
+        "textures/Winter Coat Costume White.png"
+      ]
+    },
+    {
+      "id": "110-textures-winter-costume-white",
+      "name": "Winter Costume White",
+      "textures": [
+        "textures/Winter Costume White.png"
+      ]
+    },
+    {
+      "id": "111-textures-winter-costume",
+      "name": "Winter Costume",
+      "textures": [
+        "textures/Winter Costume.png"
+      ]
+    },
+    {
+      "id": "112-textures-winter-fairy-costume-black",
+      "name": "Winter Fairy Costume Black",
+      "textures": [
+        "textures/Winter Fairy Costume Black.png"
+      ]
+    },
+    {
+      "id": "113-textures-winter-fairy-costume-pink",
+      "name": "Winter Fairy Costume Pink",
+      "textures": [
+        "textures/Winter Fairy Costume Pink.png"
+      ]
+    },
+    {
+      "id": "114-textures-witch-costume-special",
+      "name": "Witch Costume Special",
+      "textures": [
+        "textures/Witch Costume Special.png"
+      ]
+    },
+    {
+      "id": "115-textures-witch-costume-white",
+      "name": "Witch Costume White",
+      "textures": [
+        "textures/Witch Costume White.png"
+      ]
+    },
+    {
+      "id": "116-textures-witch-costume",
+      "name": "Witch Costume",
+      "textures": [
+        "textures/Witch Costume.png"
+      ]
+    },
+    {
+      "id": "117-textures-default-costume",
+      "name": "default-costume",
+      "textures": [
+        "textures/default-costume.png"
+      ]
+    },
+    {
+      "id": "118-textures-pajamas-costume",
+      "name": "pajamas-costume",
+      "textures": [
+        "textures/pajamas-costume.png"
+      ]
+    },
+    {
+      "id": "119-textures-school-costume",
+      "name": "school-costume",
+      "textures": [
+        "textures/school-costume.png"
+      ]
+    }
+  ]
+}
