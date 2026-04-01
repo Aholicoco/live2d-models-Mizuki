@@ -1,6 +1,6 @@
 # live2d-models-Mizuki
 
-一个独立的 Live2D 模型仓库，用来给博客远程提供看板娘资源。
+一个独立的 Live2D 模型仓库，适配于Mizuki主题的AStro博客，用于远程提供看板娘资源。
 
 ## 目录结构
 
