@@ -1,0 +1,21 @@
+{
+  "id": "Kar98k-normal",
+  "name": "Kar98k-normal",
+  "base": "/pio/models/Kar98k-normal/index.json",
+  "outfits": [
+    {
+      "id": "001-textures-texture-00",
+      "name": "texture_00",
+      "textures": [
+        "textures/texture_00.png"
+      ]
+    },
+    {
+      "id": "002-textures-texture-01",
+      "name": "texture_01",
+      "textures": [
+        "textures/texture_01.png"
+      ]
+    }
+  ]
+}
