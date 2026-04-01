@@ -2,12 +2,6 @@
 
 一个独立的 Live2D 模型仓库，用来给博客远程提供看板娘资源。
 
-它负责：
-- 存放模型、贴图、动作文件
-- 管理模型清单和服装清单
-- 生成前端可直接加载的 `generated/*.json`
-- 部署到 Cloudflare，供博客跨域读取
-
 ## 目录结构
 
 ```text
@@ -25,187 +19,132 @@ assets/
         generated/
 
 scripts/
-  generate-models.mjs
+  sync-models.mjs
 
 src/
   worker.js
 
 wrangler.toml
+package.json
 ```
 
 说明：
 - `registry.json`：模型总清单
 - `manifest.json`：单个模型的服装清单
-- `generated/`：根据 `manifest.json` 自动生成，博客实际加载这里的 JSON
-- `worker.js` 和 `_headers`：用于 Cloudflare 托管和 CORS
+- `generated/`：自动生成，博客实际加载这里的 JSON
+- `sync-models.mjs`：自动同步 `registry.json`、补 `manifest.json`、生成 `generated/*.json`
+- `worker.js`、`_headers`：用于 Cloudflare 托管和跨域访问
 
-## 部署
+## 方式一：本地添加模型
 
-先生成模型文件：
+适合你想先在本地确认生成结果是否正常。
 
-```bash
-node scripts/generate-models.mjs
-```
+### 1. 新建模型目录
 
-再部署到 Cloudflare：
-
-```bash
-npx wrangler deploy
-```
-
-部署成功后会得到一个域名，例如：
+在下面创建新模型目录：
 
 ```text
-https://live2d-models.novoai.top
+assets/pio/models/<model-id>/
 ```
 
-## 博客接入
-
-博客只需要配置注册表地址：
-
-```ts
-export const pioConfig = {
-  enable: true,
-  registryUrl: "https://live2d-models.novoai.top/pio/models/registry.json"
-}
-```
-
-博客运行时会自动继续读取：
-- `/pio/models/registry.json`
-- `/pio/models/<model-id>/manifest.json`
-- `/pio/models/<model-id>/generated/<outfit-id>.json`
-
-## 数据结构
-
-### registry.json
-
-```json
-{
-  "defaultModel": "pio",
-  "models": ["pio", "tia"]
-}
-```
-
-### manifest.json
-
-```json
-{
-  "id": "pio",
-  "name": "Pio",
-  "base": "/pio/models/pio/index.json",
-  "outfits": [
-    {
-      "id": "117-textures-default-costume",
-      "name": "default-costume",
-      "textures": [
-        "textures/default-costume.png"
-      ]
-    }
-  ]
-}
-```
-
-## 常用操作
-
-### 新增模型
-
-1. 新建目录 `assets/pio/models/<model-id>/`
-2. 放入模型资源：`index.json`、`model.moc`、`motions/`、`textures/`
-3. 新建 `manifest.json`
-4. 把模型 ID 加入 `assets/pio/models/registry.json`
-5. 执行：
-
-```bash
-node scripts/generate-models.mjs
-npx wrangler deploy
-```
-
-### 新增服装
-
-1. 把贴图放进对应模型的 `textures/`
-2. 在该模型的 `manifest.json` 里新增一个 `outfit`
-3. 执行：
-
-```bash
-node scripts/generate-models.mjs
-npx wrangler deploy
-```
-
-示例：
-
-```json
-{
-  "id": "120-textures-new-outfit",
-  "name": "新服装",
-  "textures": [
-    "textures/new-outfit.png"
-  ]
-}
-```
-
-### 删除模型
-
-1. 删除 `assets/pio/models/<model-id>/`
-2. 从 `registry.json` 中移除对应 ID
-3. 部署：
-
-```bash
-npx wrangler deploy
-```
-
-### 删除服装
-
-1. 从模型的 `manifest.json` 中删除对应 `outfit`
-2. 如有需要，删除对应贴图文件
-3. 执行：
-
-```bash
-node scripts/generate-models.mjs
-npx wrangler deploy
-```
-
-### 修改名称或默认模型
-
-- 修改默认模型：编辑 `registry.json` 的 `defaultModel`
-- 修改模型名称：编辑 `manifest.json` 的 `name`
-- 修改服装名称：编辑 `manifest.json` 中 outfit 的 `name`
-
-改完后建议仍然执行一次：
-
-```bash
-node scripts/generate-models.mjs
-npx wrangler deploy
-```
-
-## 检查是否部署成功
-
-至少检查这几个地址能正常打开：
+例如：
 
 ```text
-https://你的域名/pio/models/registry.json
-https://你的域名/pio/models/pio/manifest.json
-https://你的域名/pio/models/pio/generated/117-textures-default-costume.json
+assets/pio/models/haru/
 ```
 
-并确认响应头包含：
+### 2. 放入模型资源
+
+至少需要这些文件：
 
 ```text
-Access-Control-Allow-Origin: *
+assets/pio/models/haru/
+  index.json
+  model.moc
+  motions/
+  textures/
 ```
 
-## 注意
+如果模型包里有 `textures.cache`，也一起放进去，脚本会优先使用它生成服装列表。
 
-- 根域名打开是 `404` 也可能是正常的，这个仓库本来就不是展示网站
-- 新增或删除服装后，如果没执行 `generate-models.mjs`，博客切换时会找不到文件
-- `generated/` 里的文件是产物，不建议手工改
+### 3. 本地执行生成脚本
 
-## 推荐流程
+在仓库根目录运行：
 
-每次改模型资源时，按这个顺序走：
+```bash
+node scripts/sync-models.mjs
+```
 
-1. 改 `registry.json` 或 `manifest.json`
-2. 增删模型文件、贴图或动作
-3. 执行 `node scripts/generate-models.mjs`
-4. 执行 `npx wrangler deploy`
-5. 打开线上 URL 检查资源是否可访问
-6. 回博客测试角色切换和服装切换
+这个脚本会自动完成：
+- 更新 `registry.json`
+- 如果没有 `manifest.json`，自动补生成
+- 生成 `generated/*.json`
+
+### 4. 本地检查结果
+
+至少检查这几个地方：
+
+```text
+assets/pio/models/registry.json
+assets/pio/models/<model-id>/manifest.json
+assets/pio/models/<model-id>/generated/
+```
+
+如果这些文件都正常生成，说明这个模型已经可以被博客读取。
+
+## 方式二：线上自动部署添加模型
+
+适合你平时真正使用的流程。
+
+现在仓库已经配置为：
+- 推送到 GitHub 后
+- Cloudflare Git 自动部署
+- 部署前自动执行：
+
+```bash
+npm run prepare-models
+```
+
+而 `prepare-models` 实际会运行：
+
+```bash
+node scripts/sync-models.mjs
+```
+
+### 你要做的事
+
+只需要：
+
+1. 把模型目录放进仓库
+2. 提交并推送到 GitHub
+
+例如：
+
+```bash
+git add .
+git commit -m "feat: add haru live2d model"
+git push
+```
+
+### Cloudflare 会自动做的事
+
+部署时会自动：
+- 更新 `registry.json`
+- 自动补 `manifest.json`
+- 生成 `generated/*.json`
+- 把结果部署上线
+
+### 推荐使用方式
+
+平时建议直接走这套线上流程。
+
+也就是：
+- 本地只负责把模型文件放进去
+- 推送 GitHub
+- Cloudflare 自动生成并部署
+
+如果你只是想确认新模型有没有问题，再额外本地手动跑一次：
+
+```bash
+node scripts/sync-models.mjs
+```
