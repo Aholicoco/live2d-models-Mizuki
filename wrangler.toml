@@ -2,6 +2,10 @@ name = "live2d-models-Mizuki"
 main = "src/worker.js"
 compatibility_date = "2026-03-31"
 
+[build]
+command = "npm run prepare-models"
+watch_dir = ["assets/pio/models", "scripts"]
+
 [assets]
 directory = "assets"
 binding = "ASSETS"

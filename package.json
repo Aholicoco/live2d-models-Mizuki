@@ -1,0 +1,12 @@
+{
+  "name": "live2d-models-mizuki",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "prepare-models": "node scripts/sync-models.mjs",
+    "deploy": "npm run prepare-models && wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "^4.63.0"
+  }
+}
