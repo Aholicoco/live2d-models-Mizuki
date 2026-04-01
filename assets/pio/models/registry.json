@@ -1,6 +1,7 @@
 {
   "defaultModel": "tia",
   "models": [
+    "Kar98k-normal",
     "pio",
     "tia"
   ]
