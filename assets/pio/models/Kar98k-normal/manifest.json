@@ -7,13 +7,7 @@
       "id": "001-textures-texture-00",
       "name": "texture_00",
       "textures": [
-        "textures/texture_00.png"
-      ]
-    },
-    {
-      "id": "002-textures-texture-01",
-      "name": "texture_01",
-      "textures": [
+        "textures/texture_00.png",
         "textures/texture_01.png"
       ]
     }

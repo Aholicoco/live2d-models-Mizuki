@@ -18,11 +18,13 @@ function ensureDir(dirPath) {
 }
 
 function sanitizeSegment(value) {
-  return value
-    .toLowerCase()
-    .replace(/\.[^.]+$/, "")
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "") || "outfit";
+  return (
+    value
+      .toLowerCase()
+      .replace(/\.[^.]+$/, "")
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-+|-+$/g, "") || "outfit"
+  );
 }
 
 function toGeneratedRelative(entry) {
@@ -41,6 +43,17 @@ function getModelDirs() {
     .filter((entry) => entry.isDirectory())
     .map((entry) => entry.name)
     .filter((name) => hasFile(path.join(modelsRoot, name), "index.json"));
+}
+
+function getBaseModelJson(modelDir) {
+  const indexPath = path.join(modelDir, "index.json");
+  if (!fs.existsSync(indexPath)) return null;
+
+  try {
+    return readJson(indexPath);
+  } catch {
+    return null;
+  }
 }
 
 function readTexturesCache(modelDir) {
@@ -63,6 +76,13 @@ function readTexturesCache(modelDir) {
     .filter((group) => group.length > 0);
 }
 
+function readBaseTextures(modelDir) {
+  const baseJson = getBaseModelJson(modelDir);
+  if (!baseJson || !Array.isArray(baseJson.textures)) return [];
+
+  return baseJson.textures.filter((entry) => typeof entry === "string" && entry.trim());
+}
+
 function scanTextures(modelDir) {
   const texturesDir = path.join(modelDir, "textures");
   if (!fs.existsSync(texturesDir)) return [];
@@ -74,6 +94,20 @@ function scanTextures(modelDir) {
     .filter((name) => /\.(png|jpg|jpeg|webp)$/i.test(name))
     .sort((a, b) => a.localeCompare(b, "en"))
     .map((name) => [`textures/${name}`]);
+}
+
+function resolveTextureGroups(modelDir) {
+  const cacheGroups = readTexturesCache(modelDir);
+  if (cacheGroups && cacheGroups.length) {
+    return cacheGroups;
+  }
+
+  const baseTextures = readBaseTextures(modelDir);
+  if (baseTextures.length) {
+    return [baseTextures];
+  }
+
+  return scanTextures(modelDir);
 }
 
 function buildOutfits(textureGroups) {
@@ -89,7 +123,7 @@ function buildOutfits(textureGroups) {
 }
 
 function createManifest(modelId, modelDir) {
-  const textureGroups = readTexturesCache(modelDir) || scanTextures(modelDir);
+  const textureGroups = resolveTextureGroups(modelDir);
   return {
     id: modelId,
     name: modelId.charAt(0).toUpperCase() + modelId.slice(1),
@@ -143,7 +177,7 @@ function clearGeneratedDir(generatedDir) {
   }
 
   for (const entry of fs.readdirSync(generatedDir, { withFileTypes: true })) {
-    if (entry.isFile() && entry.name.endsWith('.json')) {
+    if (entry.isFile() && entry.name.endsWith(".json")) {
       fs.unlinkSync(path.join(generatedDir, entry.name));
     }
   }
@@ -152,15 +186,15 @@ function clearGeneratedDir(generatedDir) {
 function generateModelFiles(modelId, manifest) {
   const modelDir = path.join(modelsRoot, modelId);
   const basePath = manifest.base
-    ? path.join(root, 'assets', manifest.base.replace(/^\/+/, '').replaceAll('/', path.sep))
-    : path.join(modelDir, 'index.json');
+    ? path.join(root, "assets", manifest.base.replace(/^\/+/, "").replaceAll("/", path.sep))
+    : path.join(modelDir, "index.json");
 
   if (!fs.existsSync(basePath)) {
     throw new Error(`Base model json not found: ${basePath}`);
   }
 
   const baseJson = readJson(basePath);
-  const generatedDir = path.join(modelDir, 'generated');
+  const generatedDir = path.join(modelDir, "generated");
   clearGeneratedDir(generatedDir);
 
   for (const outfit of manifest.outfits || []) {
@@ -168,11 +202,11 @@ function generateModelFiles(modelId, manifest) {
     generatedJson.model = toGeneratedRelative(generatedJson.model);
     generatedJson.textures = (outfit.textures || generatedJson.textures || []).map(toGeneratedRelative);
 
-    if (generatedJson.motions && typeof generatedJson.motions === 'object') {
+    if (generatedJson.motions && typeof generatedJson.motions === "object") {
       for (const motions of Object.values(generatedJson.motions)) {
         if (!Array.isArray(motions)) continue;
         for (const motion of motions) {
-          if (motion && typeof motion.file === 'string') {
+          if (motion && typeof motion.file === "string") {
             motion.file = toGeneratedRelative(motion.file);
           }
         }
