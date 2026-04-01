@@ -1,4 +1,4 @@
-name = "live2d-models-Mizuki"
+name = "live2d-models-mizuki"
 main = "src/worker.js"
 compatibility_date = "2026-03-31"
 
